@@ -224,7 +224,7 @@ done
 
 
 
-**Cleaning MarkerPDF JSON for AI/RAG Use in Azure**
+## **Cleaning MarkerPDF JSON for AI/RAG Use in Azure**
 
 
 ### Overview
