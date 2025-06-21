@@ -1,0 +1,79 @@
+## 📁 Using Attached Knowledge Base Files
+
+**MS Defender Guru** is enhanced with a local, always-available knowledge base of Microsoft Defender and Microsoft security documentation, included as JSON files. These files are direct exports of official MS Learn product documentation and whitepapers, converted to PDF and then processed into machine-readable JSON.
+
+### How It Works
+
+- **All references, facts, and deep technical explanations** are sourced first from the attached JSON files, ensuring authoritative, context-aware answers.
+- **No need for live website access:**  
+  All information present in [Microsoft Learn](https://learn.microsoft.com/) and related sites is already embedded in the JSON knowledge base, keeping answers reliable even offline or in restricted environments.
+
+### How to Ask About the Knowledge Base
+
+- **Directly reference sections, keywords, or page numbers** if known (e.g., “Summarize Defender for Endpoint onboarding from the JSON KB” or “List roles described in the `MDE_RBAC.json` file”).
+- For **troubleshooting or technical lookups**, simply ask as you would for documentation—MS Defender Guru will query the local JSON base.
+- To verify a fact or request a source, ask:  
+  *“Show me the supporting KB file and section for this answer.”*
+
+### Extending the Knowledge Base
+
+- Add new documentation by converting additional PDFs to JSON and attaching them to the agent’s file set.
+  - **Naming convention:** Use clear, descriptive file names (e.g., `DefenderForCloud_KB.json`, `MDE_API_Docs.json`) for easy reference.
+  - The agent can search and reference any attached file if it’s called out by name or topic.
+
+### Supported File Types
+
+- **JSON files** (converted from MS Learn PDFs or HTML) will be loaded and referenced.
+
+---
+
+## Trusted Resource URLs
+
+CyberTech uses its local knowledge base (attached JSON files) as the primary information source. The following URLs are designated as **trusted resources** for supplementary learning, citation, or reference. These include both official product sites and the respected industry guides from the infosec community:
+
+### Official Microsoft Documentation
+
+- [Microsoft Defender Portal](https://learn.microsoft.com/en-us/microsoft-365/security/defender/)
+- [Microsoft Security Blog](https://www.microsoft.com/security/blog/)
+- [Defender for Cloud Docs](https://learn.microsoft.com/en-us/azure/defender-for-cloud/)
+- [Microsoft 365 Defender Community](https://techcommunity.microsoft.com/t5/microsoft-365-defender/bd-p/MicrosoftDefender)
+
+
+### Practical 365 by Quest
+
+- [Practical 365 Main Page](https://practical365.com/)
+    - [Entra ID](https://practical365.com/entra-id/)
+    - [Security](https://practical365.com/security/)
+    - [Sentinel](https://practical365.com/sentinel/)
+    - [PowerShell](https://practical365.com/powershell/)
+    - [Microsoft Graph](https://practical365.com/microsoft-graph/)
+
+
+*These Practical 365 pages are recognized as authoritative for community-driven best practices and tutorials across Microsoft 365, security, and related technologies.*
+
+---
+
+**How to Use:**
+- Cite these links in summaries, for deeper reading, or as references when a user requests external verification or walkthroughs.
+- Prefer the local JSON knowledge base first, but reference trusted URLs when a topic requires up-to-date context or external validation.
+
+---
+
+**Best Practice:**  
+For the most accurate results, always ensure the knowledge base files are up-to-date and use standardized filenames.
+
+---
+
+### Example Prompts
+
+- “Summarize device onboarding steps from the Defender for Endpoint JSON knowledge base.”
+- “What’s the difference between device compliance and device configuration, according to the included docs?”
+- “List the role-based access options from `MDE_RBAC.json`.”
+- “Show me the section about Defender for Identity sensor deployment.”
+
+---
+
+**Note:**  
+If a referenced topic is not found in the attached files, MS Defender Guru will note this and provide best-effort guidance, indicating when external updates may be needed.
+
+---
