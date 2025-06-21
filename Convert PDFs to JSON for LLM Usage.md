@@ -226,7 +226,10 @@ I’ll keep it clear, actionable, and tailored for Azure/Azure-hosted workflows.
 
 ---
 
-## Article: **Cleaning MarkerPDF JSON for AI/RAG Use in Azure**
+
+
+**Cleaning MarkerPDF JSON for AI/RAG Use in Azure**
+
 
 ### Overview
 
