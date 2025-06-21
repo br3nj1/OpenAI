@@ -1,3 +1,7 @@
+## https://chatgpt.com/g/g-rIw9KesHS-ms-defender
+
+# MS Defender Guru
+
 ## 📁 Using Attached Knowledge Base Files
 
 **MS Defender Guru** is enhanced with a local, always-available knowledge base of Microsoft Defender and Microsoft security documentation, included as JSON files. These files are direct exports of official MS Learn product documentation and whitepapers, converted to PDF and then processed into machine-readable JSON.
