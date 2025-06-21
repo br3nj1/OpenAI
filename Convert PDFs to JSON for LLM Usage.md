@@ -221,6 +221,121 @@ done
 
 ---
 
+Absolutely—here’s a **step-by-step article** (for your GitHub project) explaining how to clean up MarkerPDF JSON outputs for AI/RAG, **plus a reusable ChatGPT prompt** for future automation.
+I’ll keep it clear, actionable, and tailored for Azure/Azure-hosted workflows.
+
+---
+
+## Article: **Cleaning MarkerPDF JSON for AI/RAG Use in Azure**
+
+### Overview
+
+When converting PDFs to JSON using MarkerPDF (especially in Azure environments for document intelligence or AI ingestion), the raw output is often too complex for direct use in Retrieval-Augmented Generation (RAG) pipelines or LLMs.
+This article outlines how to flatten, filter, and clean MarkerPDF JSON for optimal AI use—removing unnecessary images, polygons, and empty structures, while extracting meaningful section headings and text.
+
+---
+
+### Why Clean MarkerPDF JSON?
+
+* **Reduces size and complexity** for faster AI processing
+* **Improves searchability** by flattening nested sections
+* **Removes noise** (e.g., OCR artifacts, images, empty blocks)
+* **Makes it trivial to ingest with OpenAI, Azure AI, LlamaIndex, Haystack, etc.**
+
+---
+
+### **Recommended Workflow**
+
+#### 1. **Convert PDF with MarkerPDF**
+
+* Run MarkerPDF (locally or in Azure VM/container)
+* You’ll get:
+
+  * `document.json` (full structure)
+  * `meta.json` (section/page/heading map)
+
+#### 2. **Clean the Output**
+
+* **Objective:**
+  Convert MarkerPDF’s hierarchical, image-heavy JSON into a flat array of `{section, page, content}` for each non-empty text block.
+* **Automation:**
+  Use the AI prompt below to process your files via ChatGPT, or adapt the code snippet for Python in Azure Functions/Notebooks.
+
+---
+
+#### 3. **Sample Output (Ideal for AI/RAG)**
+
+```json
+[
+  {
+    "section": "Preface",
+    "page": 10,
+    "content": "In the rapidly evolving world of digital security, 'Mastering Splunk for Cybersecurity' serves as a comprehensive guide..."
+  },
+  {
+    "section": "1. Introduction to Splunk and Cybersecurity",
+    "page": 16,
+    "content": "Chapter 1 sets the stage for our exploration, outlining the importance of Splunk as a tool in the cybersecurity landscape..."
+  }
+]
+```
+
+* **No images, polygons, or empty/duplicate headers.**
+* **Ready for Azure OpenAI, LangChain, LlamaIndex, etc.**
+
+---
+
+## **Reusable ChatGPT Prompt**
+
+Paste this into ChatGPT (or customize as needed):
+
+---
+
+**Prompt:**
+
+```
+You are a professional technical assistant.  
+I have MarkerPDF .json and .meta.json files exported from a PDF.  
+I need you to process the .json file as follows:
+- Remove all images, polygons, OCR fields, and bounding box data
+- Ignore OCR/image content entirely (assume only embedded text is valid)
+- For every non-empty text block, output a flat JSON array with:
+    - Section or heading (if available)
+    - Page number
+    - The text content
+- If section/heading is missing, use an empty string
+- Output should look like: [{"section": "...", "page": 1, "content": "..."}]
+- Only include non-empty, meaningful text blocks
+- Make the result downloadable as a single cleaned JSON file
+```
+
+---
+
+## **Tips for Azure Pipelines**
+
+* **Automate via Python Notebooks or Functions:**
+  Use the same cleaning logic shown above.
+* **Store cleaned JSON in Azure Blob or Files for LLM ingestion.**
+* **Consider running the cleaning step as a post-process in Azure Data Factory or Synapse.**
+
+---
+
+## **References**
+
+* [MarkerPDF GitHub](https://github.com/MarkerPDF/MarkerPDF)
+* [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+* [LlamaIndex](https://gpt-index.readthedocs.io/)
+* [LangChain](https://python.langchain.com/)
+
+---
+
+**Questions, improvements, or automation scripts for other workflows? Open an issue or PR!**
+
+---
+
+**Let me know if you want the Python cleaning script in the repo as well, or more Azure automation tips!**
+
+
 ## License
 
 This project leverages [marker](https://github.com/VikParuchuri/marker) by Vik Paruchuri (see marker repo for license and usage info).
