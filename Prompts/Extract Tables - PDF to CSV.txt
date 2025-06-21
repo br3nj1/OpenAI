@@ -1,0 +1,46 @@
+Certainly! Here’s the **data conditioning prompt** formatted in **Markdown** for use in a GitHub README, issue, or documentation.
+This is direct, professional, and ready for copy-paste into a repo or prompt engineering guide.
+
+---
+
+```markdown
+## AI Prompt: Extract and Normalize All Tables from PDF for Downstream AI Parsing
+
+**Instructions for LLM or Extraction Agent:**
+
+Parse the attached PDF and extract every table. For each table:
+
+- **Assign a sequential table number** (`Table 1`, `Table 2`, ...) if the table is not explicitly numbered in the document.
+- **Assign a concise, descriptive title** that summarizes each table’s content or purpose, using the nearest section heading or by inferring context.
+- **Extract all table headers and data rows exactly as they appear** in the PDF, preserving the column order.
+- For every row (including headers), **prepend the table number and table title as the first two columns**:
+```
+
+Table Number, Table Title, \[Header 1], \[Header 2], ...
+
+```
+- If any table is missing or has ambiguous headers, **infer or standardize them for downstream AI compatibility**.
+- **Do not extract notes, callouts, or unstructured lists** unless they are presented as formal tables.
+- **Combine all rows from all tables into a single CSV file** using the above structure.
+- If tables span multiple pages, treat them as one logical table but maintain sequential numbering.
+- **Flatten merged cells for clean CSV output.**
+- If a table lacks a clear title, **create one based on function or surrounding context.**
+- **Output only a downloadable CSV.**
+
+**Objective:**  
+Every row must be individually parseable and traceable to its source context, enabling robust ETL and AI workflows.
+
+---
+
+**Example Output Row:**
+
+```
+
+Table 3, Modular Input Parameters, Parameter, Description, Required, Default Value, Example Value, ...
+
+```
+```
+
+---
+
+Let me know if you want this in another documentation style (e.g., as a prompt template in YAML, or in a CONTRIBUTING.md).
