@@ -219,10 +219,6 @@ done
 | Download from Azure Blob       | `az storage blob download-batch --account-name ... --account-key ... --destination ... --source ...`  |
 | Upload to Azure Blob           | `az storage blob upload-batch --account-name ... --account-key ... --destination ... --source ...`    |
 
----
-
-Absolutely—here’s a **step-by-step article** (for your GitHub project) explaining how to clean up MarkerPDF JSON outputs for AI/RAG, **plus a reusable ChatGPT prompt** for future automation.
-I’ll keep it clear, actionable, and tailored for Azure/Azure-hosted workflows.
 
 ---
 
@@ -331,13 +327,6 @@ I need you to process the .json file as follows:
 * [LangChain](https://python.langchain.com/)
 
 ---
-
-**Questions, improvements, or automation scripts for other workflows? Open an issue or PR!**
-
----
-
-**Let me know if you want the Python cleaning script in the repo as well, or more Azure automation tips!**
-
 
 ## License
 
