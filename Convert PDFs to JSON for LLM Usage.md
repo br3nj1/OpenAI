@@ -315,8 +315,7 @@ I need you to process the `.json` file as follows:
 
 **You should always default to these rules unless I specify otherwise.**
 
----
-
+```
 ## **Tips for Azure Pipelines**
 
 * **Automate via Python Notebooks or Functions:**
