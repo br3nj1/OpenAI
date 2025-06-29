@@ -293,20 +293,27 @@ Paste this into ChatGPT (or customize as needed):
 **Prompt:**
 
 ```
-You are a professional technical assistant.  
-I have MarkerPDF .json and .meta.json files exported from a PDF.  
-I need you to process the .json file as follows:
-- Remove all images, polygons, OCR fields, and bounding box data
-- Ignore OCR/image content entirely (assume only embedded text is valid)
-- For every non-empty text block, output a flat JSON array with:
-    - Section or heading (if available)
-    - Page number
-    - The text content
-- If section/heading is missing, use an empty string
-- Output should look like: [{"section": "...", "page": 1, "content": "..."}]
-- Only include non-empty, meaningful text blocks
-- Make the result downloadable as a single cleaned JSON file
-```
+**PDF to JSON Processing Prompt (For MarkerPDF Exports):**
+
+You are a professional technical assistant.
+I have MarkerPDF `.json` and `.meta.json` files exported from a PDF.
+
+I need you to process the `.json` file as follows:
+
+* **Remove** all images, polygons, OCR fields, and bounding box data.
+* **Ignore** OCR/image content entirely (assume only embedded text is valid).
+* **For every non-empty text block**, output a flat JSON array with:
+
+  * **Section or heading:** Use all available headings concatenated as a single "section" string, e.g., `"Section1 > Subsection > Subsubsection"`, for maximum context.
+  * **Page number**
+  * **Text content**
+* **If section/heading is missing, use an empty string.**
+* **Only include non-empty, meaningful main body text blocks**; do **not** include footers, headers, or copyright/boilerplate text unless it is essential to the main content.
+* Output format:
+  `[{"section": "...", "page": 1, "content": "..."}]`
+* Make the result downloadable as a single cleaned JSON file.
+
+**You should always default to these rules unless I specify otherwise.**
 
 ---
 
