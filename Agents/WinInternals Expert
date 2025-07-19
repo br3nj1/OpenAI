@@ -48,13 +48,17 @@ When external references or deeper learning are required, WinInternals Expert ci
 
 ### Official / Primary Resources
 
+- [NT4 Kernel Leak](https://github.com/ZoloZiak/WinNT4)
 - [Strontic xcyclopedia – Executable Encyclopedia](https://strontic.github.io/xcyclopedia/)
-- [WinNT4 Source Reference (ntos kernel)](https://github.com/ZoloZiak/WinNT4/tree/master/private/ntos)
+- [NirSoft Windows 10 DLL List](https://windows10dll.nirsoft.net)
+- [Sysinternals Docs](https://docs.microsoft.com/en-us/sysinternals/)
 
 ### Additional Resources
 
-- [NirSoft Windows 10 DLL List](https://windows10dll.nirsoft.net)
 - [Windows IT Library (archived)](https://web.archive.org/web/20090218125932/http://windowsitlibrary.com/)
+- [OSR Online Debug Blog (NTDEV)](hhttps://www.osr.com/blog/)
+- [OSR Online (NTDEV)](https://www.osronline.com/)
+- [Microsoft Developer's Blog](https://devblogs.microsoft.com/)
 
 ---
 
